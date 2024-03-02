@@ -44,6 +44,7 @@ const Searchbar = (props: searchBarProps) => {
           {props.filterOptions.map((category) => {
             return (
               <span
+                key={category.name}
                 onClick={() =>
                   props.onCategoryClick && props.onCategoryClick(category.name)
                 }
