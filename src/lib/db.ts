@@ -6,7 +6,7 @@ class Database {
   }
 
   async _fetchData() {
-    const response = await fetch("http://localhost:3000/api/");
+    const response = await fetch("https://www.divineappointments.sg/api/");
     const jsonResponse = await response.json();
     this.data = jsonResponse.data;
   }
