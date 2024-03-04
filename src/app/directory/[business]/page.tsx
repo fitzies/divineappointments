@@ -1,14 +1,10 @@
 import { db } from "@/lib/db";
 
 const Page = async ({ params }: { params: { business: string } }) => {
-  const decodedName = decodeURIComponent(
-    params.business.replace(/%27/g, "'")
-  ).replace(/\b\w/g, (l) => l.toUpperCase());
+  const decodedName = decodeURIComponent(params.business.replace(/%27/g, "'"));
 
   const business = await db.findFirst({
-    where: {
-      name: decodedName,
-    },
+    where: { name: decodedName },
   });
 
   if (!business) {

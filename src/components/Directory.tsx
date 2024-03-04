@@ -3,9 +3,15 @@
 import { useState } from "react";
 import Container from "./Container";
 import Searchbar from "./Searchbar";
+import { useRouter } from "next/navigation";
 
 const Directory = ({ businesses }: { businesses: Business[] }) => {
   const [search, setSearch] = useState("");
+  // const router = useRouter();
+
+  // if (businesses.length <= 0) {
+  //   router.refresh();
+  // }
 
   const filteredBusinesses = businesses.filter(
     (b: Business) =>

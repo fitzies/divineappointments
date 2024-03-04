@@ -18,7 +18,11 @@ const Searchbar = (props: searchBarProps) => {
 
   return (
     <div className="flex flex-col w-2/3 justify-center relative">
-      <div className="flex justify-center items-center gap-2 my-2">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        className="flex justify-center items-center gap-2 my-2"
+      >
         <input
           className="border-2 px-3 py-2 rounded-xl w-full outline-none"
           placeholder="Barbershop, hairdresser, etc."
@@ -33,7 +37,7 @@ const Searchbar = (props: searchBarProps) => {
             ☰
           </button>
         ) : null}
-      </div>
+      </motion.div>
       {props.filter && props.filterOptions && filterOpen ? (
         <motion.div
           initial={{ y: -20, opacity: 0 }}
